@@ -1,13 +1,16 @@
 import random
 from art import logo
 
+EASY_TURNS = 10
+HARD_TURNS = 5
+
 print(logo + "\n\n")
 print("Welcome to the number guessing game!")
 print("I'm thinking of a number between 1 and 100.")
 num = random.randint(1, 100)
 level = input("Choose a diffculty (easy or hard): ")
 
-attempts = 5 if level == 'hard' else 10
+attempts = HARD_TURNS if level == 'hard' else EASY_TURNS
 print(f"You have {attempts} attempts remaining to guess the number.")
 game_over = False
 
@@ -26,4 +29,3 @@ while attempts > 0 and not game_over:
 
 if not game_over:
   print(f"You've run out of guesses!!\nThe correct number was {num}")
-  
